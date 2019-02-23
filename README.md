@@ -1,1 +1,3 @@
 # example-firenuxt
+
+Init.
