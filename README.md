@@ -10,7 +10,7 @@ Create a new Nuxt.js project using the scaffolding tool [create-nuxt-app](https:
 ```
 npx create-nuxt-app <project-name>
 
-// Configuration
+# Configuration
 
 ? Project name
 firenuxt
@@ -68,7 +68,7 @@ First go to [Firebase Console](https://console.firebase.google.com/) and create 
 mkdir firebase && cd firebase
 firebase init
 
-// Configuration
+# Configuration
 
 ? Which Firebase CLI features do you want to setup for this folder?
 [x] Functions
@@ -113,9 +113,8 @@ npm i -D babel-loader@^7.1.3 babel-core babel-plugin-transform-runtime babel-pre
 ```
 
 Create a `webpack.config.js` file:
+`./firebase/functions/webpack.config.js`
 ```js
-// ./firebase/functions/webpack.config.js
-
 const webpack = require('webpack')
 const path = require('path')
 const nodeExternals = require('webpack-node-externals')
@@ -150,9 +149,8 @@ module.exports = config
 ```
 
 Lets create a `./firebase/functions/src` directory and make that `entry.js` for `webpack`.
+`./firebase/functions/src/index.js`
 ```js
-// ./firebase/functions/src/index.js
-
 import * as functions from 'firebase-functions'
 import * as admin from 'firebase-admin'
 import nuxtApp from './nuxtApp'
@@ -197,10 +195,9 @@ export const nuxtApp = functions.https.onRequest(app)
 ```
 
 Create a `.babelrc` file to configure `babel`. Important to note the target `node` version; Firebase Functions only currently supports up to `node` version 8.
+
+`./firebase/functions/.babelrc`
 ```json
-// ./firebase/functions/.babelrc
-
-
 {
   "presets": [
     [ "env", {
@@ -219,10 +216,8 @@ Create a `.babelrc` file to configure `babel`. Important to note the target `nod
 ```
 
 Lets make some changes to `package.json`.
+`./firebase/functions/package.json`
 ```json
-// ./firebase/functions/package.json
-
-
 {
   "engines": {
     "node": "8"
