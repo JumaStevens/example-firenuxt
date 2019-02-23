@@ -163,7 +163,7 @@ app.get('*', handleRequest)
 export const nuxtApp = functions.https.onRequest(app)
 ```
 
-Create a `.babelrc` file to configure `babel`.
+Create a `.babelrc` file to configure `babel`. Important to note the target `node` version; Firebase Functions only currently supports up to `node` version 8.
 ```json
 // ./firebase/functions/.babelrc
 
@@ -182,6 +182,21 @@ Create a `.babelrc` file to configure `babel`.
       "regenerator": true
     }]
   ]
+}
+```
+
+Lets make some changes to `package.json`.
+```json
+// ./firebase/functions/package.json
+
+
+{
+  "engines": {
+    "node": "8"
+  },
+  "scripts": {
+    "build": "webpack --mode production --hide-modules"
+  }
 }
 ```
 
