@@ -34,7 +34,7 @@ Open `package.json` and change the `nuxt` package version.
 }
 ```
 
-First go to (Firebase Console)[Go to https://console.firebase.google.com/] and create a new project. Next initialize Firebase in the project root directory.
+First go to [Firebase Console](https://console.firebase.google.com/) and create a new project. Next initialize Firebase in the project root directory.
 
 ```
 mkdir firebase && cd firebase
@@ -78,7 +78,7 @@ Open `./firebase/firebase.json` and add the following:
 }
 ```
 
-Move into the `./firebase/functions` directory, delete the `.gitignore`, and install some additional dependencies to get (webpack)[https://webpack.js.org/] and (babel)[https://babeljs.io/] setup.
+Move into the `./firebase/functions` directory, delete the `.gitignore`, and install some additional dependencies to get [webpack](https://webpack.js.org/) and [babel](https://babeljs.io/) setup.
 ```
 npm i -S babel-runtime express nuxt
 npm i -D babel-loader@^7.1.3 babel-core babel-plugin-transform-runtime babel-preset-env webpack webpack-cli webpack-node-externals
