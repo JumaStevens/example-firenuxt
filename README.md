@@ -80,7 +80,7 @@ Open `./firebase/firebase.json` and add the following:
 Move into the `./firebase/functions` directory, delete the `.gitignore`, and install some additional dependencies to get (webpack)[https://webpack.js.org/] and (babel)[https://babeljs.io/] setup.
 ```
 npm i -S babel-runtime express nuxt
-npm i -D babel-core babel-loader babel-plugin-transform-runtime babel-preset-env webpack webpack-cli webpack-node-externals
+npm i -D babel-loader@^7.1.3 babel-core babel-plugin-transform-runtime babel-preset-env webpack webpack-cli webpack-node-externals
 ```
 
 Create a `webpack.config.js` file:
@@ -139,13 +139,17 @@ Now lets create the Server-side Rendered function magic.
 
 
 import * as functions from 'firebase-functions'
-import * as express from 'express'
+import express from 'express'
 import { Nuxt } from 'nuxt'
 
 const app = express()
 
 const config = {
-  buildDir: 'nuxt'
+  dev: false,
+  buildDir: 'nuxt',
+  build: {
+    publicPath: '/'
+  }
 }
 
 const nuxt = new Nuxt(config)
@@ -199,5 +203,7 @@ Lets make some changes to `package.json`.
   }
 }
 ```
+
+
 
 
