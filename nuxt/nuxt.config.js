@@ -4,6 +4,8 @@ const pkg = require('./package')
 module.exports = {
   mode: 'universal',
 
+  buildDir: '../firebase/functions/nuxt',
+
   /*
   ** Headers of the page
   */
@@ -46,11 +48,13 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    publicPath: '/',
+    
     /*
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      
+
     }
   }
 }

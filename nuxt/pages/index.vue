@@ -6,8 +6,11 @@
         firenuxt
       </h1>
       <h2 class="subtitle">
-        My bee&#39;s knees Nuxt.js project
+        A SSR Firebase Nuxt app using Webpack and Babel
       </h2>
+      <div>
+        <img src='~/assets/images/very_nice.jpg'>
+      </div>
       <div class="links">
         <a
           href="https://nuxtjs.org/"

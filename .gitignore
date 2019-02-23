@@ -82,3 +82,24 @@ dist
 
 # Service worker
 sw.*
+
+# General
+.DS_Store
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Compiled output files
+firebase/nuxt/
+firebase/functions/index.js
+
+# Firebase specific files
+firebase/.firebase/

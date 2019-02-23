@@ -1,7 +1,7 @@
 {
   "name": "firenuxt",
   "version": "1.0.0",
-  "description": "My bee&#39;s knees Nuxt.js project",
+  "description": "A SSR Firebase Nuxt app using Webpack and Babel",
   "author": "Juma Stevens",
   "private": true,
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "cross-env": "^5.2.0",
-    "nuxt": "^2.4.0"
+    "nuxt": "^2.3.4"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"
