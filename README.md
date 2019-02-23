@@ -6,9 +6,8 @@ Live site: https://example-firenuxt.firebaseapp.com
 Temp
 
 ## Getting started
-The Nuxt.js team has created scaffolding tool [create-nuxt-app](https://github.com/nuxt/create-nuxt-app/).
+Create a new Nuxt.js project using the scaffolding tool [create-nuxt-app](https://github.com/nuxt/create-nuxt-app/).
 ```
-// Create new Nuxt.js project
 npx create-nuxt-app <project-name>
 ```
 
