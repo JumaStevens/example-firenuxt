@@ -77,10 +77,13 @@ Open `./firebase/firebase.json` and add the following:
 }
 ```
 
-Move into the `./firebase/functions` directory, and lets setup (webpack)[https://webpack.js.org/].
+Move into the `./firebase/functions` directory, delete the `.gitignore`, and install some additional dependencies to get (webpack)[https://webpack.js.org/] and (babel)[https://babeljs.io/] setup.
+```
+npm i -S babel-runtime express nuxt
+npm i -D babel-core babel-loader babel-plugin-transform-runtime babel-preset-env webpack webpack-cli webpack-node-externals
+```
 
-delete the `.gitignore`, and create a `webpack.config.js` file.
-
+Create a `webpack.config.js` file:
 ```js
 // ./firebase/functions/webpack.config.js
 
@@ -117,9 +120,69 @@ const config = {
 module.exports = config
 ```
 
+Lets create a `./firebase/functions/src` directory and make that `entry.js` for `webpack`.
+```js
+// ./firebase/functions/src/index.js
+
+import * as functions from 'firebase-functions'
+import * as admin from 'firebase-admin'
+import nuxtApp from './nuxtApp'
+
+admin.initializeApp(functions.config().firebase)
+
+export { nuxtApp }
+```
+
+Now lets create the Server-side Rendered function magic.
+```js
+// ./firebase/functions/src/nuxtApp.js
 
 
+import * as functions from 'firebase-functions'
+import * as express from 'express'
+import { Nuxt } from 'nuxt'
+
+const app = express()
+
+const config = {
+  buildDir: 'nuxt'
+}
+
+const nuxt = new Nuxt(config)
+
+function handleRequest(req, res) {
+  nuxt.renderRoute('/').then(result => {
+    res.send(result.html)
+  }).catch(e => {
+    res.send(e)
+  })
+}
+
+app.get('*', handleRequest)
+
+export const nuxtApp = functions.https.onRequest(app)
+```
+
+Create a `.babelrc` file to configure `babel`.
+```json
+// ./firebase/functions/.babelrc
 
 
+{
+  "presets": [
+    [ "env", {
+      "target": {
+        "node": "8"
+      }
+    }]
+  ],
+  "plugins": [
+    ["transform-runtime", {
+      "polyfill": true,
+      "regenerator": true
+    }]
+  ]
+}
+```
 
 
