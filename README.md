@@ -9,6 +9,35 @@ Temp
 Create a new Nuxt.js project using the scaffolding tool [create-nuxt-app](https://github.com/nuxt/create-nuxt-app/).
 ```
 npx create-nuxt-app <project-name>
+
+// Configuration
+
+? Project name
+firenuxt
+
+? Project description
+My bee's knees Nuxt.js project
+
+? Use a custom server framework
+none
+
+? Choose features to install
+none
+
+? Use a custom UI framework
+none
+
+? Use a custom test framework
+none
+
+? Choose rendering mode
+Universal
+
+? Auther name
+Juma Stevens
+
+? Choose a package manager
+npm
 ```
 
 Move `.gitignore` and `.editorconfig` to the project root directory.
@@ -46,7 +75,7 @@ firebase init
 [x] Hosting
 
 ? Select a default Firebase project for this directory:
-[create a new project]
+[example-firenuxt]
 
 ? What language would you like to use to write Cloud Functions?
 JavaScript
