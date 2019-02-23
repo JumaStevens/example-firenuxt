@@ -98,7 +98,7 @@ yarn-error.log
 *.sln
 
 # Compiled output files
-firebase/nuxt/
+firebase/functions/nuxt/
 firebase/functions/index.js
 
 # Firebase specific files

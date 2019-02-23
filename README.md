@@ -1,5 +1,6 @@
 # example-firenuxt
-Init.
+
+Live site: https://example-firenuxt.firebaseapp.com
 
 ## Overview
 Temp
